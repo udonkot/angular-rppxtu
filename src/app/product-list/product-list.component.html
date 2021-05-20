@@ -1,0 +1,32 @@
+<h2>Products</h2>
+
+<div *ngFor="let seihin of products">
+
+  <h3>
+    <a [title]="seihin.name + ' details'">
+      {{ seihin.name }}
+    </a>
+
+    <p *ngIf="seihin.description">
+      Description: {{ seihin.description }}
+    </p>
+
+    price : {{ seihin.price }} Yen
+    <br />
+
+    <button (click)="share()">
+      シェアする
+    </button>
+
+    <app-product-alerts [products]="seihin" (notify)="onNotify()">
+    </app-product-alerts>
+
+
+
+  </h3>
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
